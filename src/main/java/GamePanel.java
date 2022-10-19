@@ -22,6 +22,7 @@ public class GamePanel extends JPanel implements ActionListener {
     Random random;
 
     GamePanel(){
+
         random = new Random();
         this.setPreferredSize(new Dimension(SCREEN_WIDTH,SCREEN_HEIGHT));
         this.setBackground(new Color(52, 146, 235));
@@ -71,8 +72,8 @@ public class GamePanel extends JPanel implements ActionListener {
     }
 
     public void applePopulate(){
-        appleX = random.nextInt((int)SCREEN_WIDTH / UNIT_SIZE) * UNIT_SIZE;
-        appleY = random.nextInt((int)SCREEN_HEIGHT / UNIT_SIZE) * UNIT_SIZE;
+        appleX = random.nextInt(SCREEN_WIDTH / UNIT_SIZE) * UNIT_SIZE;
+        appleY = random.nextInt(SCREEN_HEIGHT / UNIT_SIZE) * UNIT_SIZE;
     }
 
     public void move(){
@@ -148,6 +149,8 @@ public class GamePanel extends JPanel implements ActionListener {
         g.drawString("FINAL SCORE: " + applesEaten, 180, (SCREEN_HEIGHT / 2) + (UNIT_SIZE * 4));
 
     }
+
+    JButton button = new JButton();
 
     @Override
     public void actionPerformed(ActionEvent e) {
